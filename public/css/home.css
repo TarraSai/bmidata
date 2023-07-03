@@ -1,0 +1,38 @@
+.home{
+    width:100%px;
+    height: 800px;
+    background-image: url("./background1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    box-sizing: content-box;
+    border-radius: 25px;
+}
+.carousel{
+    padding-top: 300px;
+    /* padding-left:-50px; */
+    width: 500px;
+}
+.BBmi{
+    width:100%px;
+    height: 650px;
+    background-color: aqua;
+}
+.cardsai{
+    box-sizing:content-box;
+    width:100%px;
+    height: 400px;
+    background-color: rgb(34, 25, 91);
+}
+.foot{
+    width:100%px;
+    height:200px;
+    background-color: rgb(70, 68, 68);
+}
+.container{
+    padding-left: 40px;
+    
+    padding-top: 65px;
+    align-items: center;
+}

@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        border: 2px solid red;
+      }
+      25% {
+        border: 2px solid orange;
+      }
+      50% {
+        border: 2px solid yellow;
+      }
+      75% {
+        border: 2px solid green;
+      }
+      100% {
+        border: 2px solid blue;
+      }
+    }
+
+    .profile-info {
+      margin-bottom: 20px;
+    }
+
+    .profile-info h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .profile-info p {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .profile-info span.label {
+      font-weight: bold;
+    }
+
+    .logout-btn {
+      background-color: #f44336;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile-info">
+      {{!-- <img id="profileImg" class="profile-img" src="{{ user.imagePath }}" alt="Profile Image"> --}}
+{{#if user.imagePath}}
+    <img id="profileImg" class="profile-img" src="{{ user.imagePath }}" alt="Profile Image">
+  {{else}}
+    <img id="profileImg" class="profile-img" src="../css/porfilepic.jpg" alt="Default Profile Image">
+  {{/if}}
+
+      <h1>{{ user.name }}</h1>
+      <p><span class="label">Age:</span> {{ user.age }}</p>
+      <p><span class="label">Email:</span> {{ user.email }}</p>
+      <!-- Profile image upload form -->
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <button type="submit">Upload</button>
+      </form>
+      <!-- Logout button -->
+      <button class="logout-btn"><a href="./logout" style="text-decoration: none;">Logout</a></button>
+    </div>
+    <div class="profile-description">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero vel mauris dignissim gravida. Duis eget justo et odio malesuada tempor. Nullam eleifend sagittis iaculis. Fusce laoreet velit ut tortor tempor, vel iaculis tellus congue. Praesent nec aliquet nunc.</p>
+    </div>
+  </div>
+</body>
+</html>

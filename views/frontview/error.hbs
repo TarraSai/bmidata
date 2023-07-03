@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error Page</title>
+  <style>
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .error-icon {
+      font-size: 100px;
+      color: #FF5252;
+    }
+
+    .error-message {
+      font-size: 24px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animated-background {
+      background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div class="error-container animated-background">
+    <span class="error-icon">&#9888;</span>
+    <h1 class="error-message">Oops! Something went wrong.</h1>
+  </div>
+
+  <script>
+    // Draw canvas image
+    window.addEventListener('load', () => {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.src = 'https://example.com/path/to/image.jpg'; // Replace with your canvas image URL
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      };
+    });
+  </script>
+</body>
+</html>

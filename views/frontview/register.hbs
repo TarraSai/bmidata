@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>headlink}}
+  <link rel="stylesheet" href="../css/register.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-oy4P6R0AXI2XqO6sKvaYO1Px15b/Y4rWUMAAr3Gy3hXyfQa4JyCDY53ElDbVKsmPY3WssQXo3Kg6vA2A1QofgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  /* Add your additional CSS styles here */
+  /* ... */
+
+  .fade-in {
+    opacity: 0;
+    animation: fade-in-animation 1s forwards;
+  }
+
+  @keyframes fade-in-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .gradient-custom {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    animation: background-animation 5s infinite;
+    background-size: 400% 400%;
+  }
+
+  @keyframes background-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .card-registration {
+    border-radius: 15px;
+    background-color: white;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .close-btn:hover {
+    color: #f00;
+  }
+
+  @media (max-width: 768px) {
+    .card-registration {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card-registration {
+      width: 100%;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration">
+            <div class="card-body p-3 p-md-4 fade-in">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-4">Registration Form</h3>
+              <form action="/register" method="post">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="form-outline">
+                      <input type="text" id="firstName" class="form-control form-control-lg" name="name" />
+                      <label class="form-label" for="firstName"><i class="fas fa-user"></i> First Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-outline">
+                      <input type="password" id="password" class="form-control form-control-lg" name="password" />
+                      <label class="form-label" for="password"><i class="fas fa-lock"></i> Password</label>
+                      <span class="password-toggle" onclick="togglePassword('password')">
+                        <i class="fas fa-eye"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3 d-flex align-items-center">
+                    <div class="form-outline datepicker w-100">
+                      <input type="password" class="form-control form-control-lg" id="confirmPassword" name="cpassword" />
+                      <label for="confirmPassword" class="form-label"><i class="fas fa-lock"></i> Confirm Password</label>
+                      <span class="password-toggle" onclick="togglePassword('confirmPassword')">
+                        <i class="fas fa-eye"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3 d-flex align-items-center">
+                    <div class="form-outline datepicker w-100">
+                      <input type="text" class="form-control form-control-lg" id="birthdayDate" name="age" />
+                      <label for="birthdayDate" class="form-label"><i class="fas fa-calendar-alt"></i> Age</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" checked />
+                      <label class="form-check-label" for="femaleGender"><i class="fas fa-female"></i> Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
+                      <label class="form-check-label" for="maleGender"><i class="fas fa-male"></i> Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="otherGender" value="other" />
+                      <label class="form-check-label" for="otherGender"><i class="fas fa-genderless"></i> Other</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3 pb-2">
+                    <div class="form-outline">
+                      <input type="email" id="emailAddress" class="form-control form-control-lg" name="email" />
+                      <label class="form-label" for="emailAddress"><i class="fas fa-envelope"></i> Email</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3 pb-2">
+                    <div class="form-outline">
+                      <input type="text" id="phonenumber" class="form-control form-control-lg" name="phonenumber" />
+                      <label class="form-label" for="phonenumber"><i class="fas fa-phone"></i> PhoneNumber</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end pt-2">
+                  <button type="submit" class="btn btn-primary btn-lg" name="submit">Register</button>
+                </div>
+              </form>
+              <button type="button" class="close-btn" onclick="goBack()">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function togglePassword(id) {
+      var x = document.getElementById(id);
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
+
