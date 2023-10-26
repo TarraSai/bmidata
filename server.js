@@ -32,9 +32,14 @@ hbs.registerPartials(nav_path);
 
 
 app.get('/home',(req,res)=>{
-    res.render('home');
+    res.render('withoutlog');
 });
-
+app.get('/withoutlog',(req,res)=>{
+  res.render('withoutlog')
+})
+app.get('/withlogi',(req,res)=>{
+  res.render('withlogi')
+})
 
 app.get('/aboutus',(req,res)=>{
     res.render('aboutus');
@@ -74,7 +79,7 @@ const registered=await registerdata.save();
 
 
  
-res.status(201).render("home");
+res.status(201).render("withlogi");
     }
     else{
         // res.send("password is not marching..");
@@ -114,7 +119,7 @@ app.post('/login',async(req,res)=>{
  
 console.log( passwordmatch);
        if(passwordmatch) { 
-        res.status(201).render("home");
+        res.status(201).render("withlogi");
       }
       else{
 
@@ -138,28 +143,35 @@ app.get('/logout', authorization, async (req, res) => {
     try {
       res.clearCookie('usertoken'); // Clear the 'usertoken' cookie
       // Additional logout logic if needed
-      res.render('login'); // Render the login page after logout
+      res.render('withoutlog'); // Render the login page after logout
     } catch (err) {
       res.status(500).send(err);
     }
   });
   
-
+  app.get("/underweight", (req, res) => {
+    res.render("underweight"); // Render the underweight.hbs template
+  });
+  
+  app.get("/normalweight", (req, res) => {
+    res.render("normalweight"); // Render the normalweight.hbs template
+  });
+  
+  app.get("/overweight", (req, res) => {
+    res.render("overweight"); // Render the overweight.hbs template
+  });
+  
+  app.get("/obese", (req, res) => {
+    res.render("obese"); // Render the obese.hbs template
+  });
+    
 
 app.get('*',(req,res)=>{
     res.render('error');
 })
 
-
-
-
-
-
 //for image uploading in the profile page
 // Assuming you have a User model defined
-
-
-
 
 
 app.post('/upload', upload.single('image'), (req, res) => {
@@ -181,19 +193,6 @@ app.post('/upload', upload.single('image'), (req, res) => {
       res.status(500).send('Error updating user image');
     });
 });
-
-
-
-  
-    
-
-
-
-
-
-
-
-
 
 app.listen(6555,()=>{
     console.log("server is running..");

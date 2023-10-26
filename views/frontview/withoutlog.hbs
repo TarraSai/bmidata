@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+  <link rel="stylesheet" href="../css/paegcss.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand animate-character" href="#"  style="margin-left:35px"><span><img src="../css/logo.png"></span>Know Your BMI</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <button class="nav-link">
+            <span class="btn-2" style="color:black"><a  href="/withoutlog">Home</a></span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link">
+           <span class="btn-2" style="color:black"><a  href="/register">Register</a></span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link">
+            <span class="btn-2" style="color:black"><a  href="/login">Login</a></span>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link">
+            <span class="btn-2" style="color:black"><a  href="/aboutus">About us</a></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Part 1: Landing Page (Home Section) -->
+  <section class="home">
+    <div class="left-column">
+      <h1   id="hari">What is BMI ?..</h1>
+      <h4 style="color:black">BMI stands for Body Mass Index. It is a widely used and simple measure to assess whether an individual's weight is in a healthy range for their height. BMI is a helpful tool for both individuals and healthcare professionals to gauge potential health risks associated with being underweight, overweight, or obese..</h4>
+
+<div id="container">
+  <button class="learn-more">
+    <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text" style="padding-top:200px" >Learn More </span>
+  </button>
+</div>
+       
+    </div>
+    <div class="right-column">
+     <img src="../css/removebmi.png" id="image">
+    </div>
+  </section>
+
+  <!-- Part 2: BMI Calculator Section -->
+  
+<section class="bmi-calculator" >
+  
+  <div class="part-1">
+    <section>
+      
+  <div class="SAI">
+    <div class="textsai">
+      <input type="text" id="display" class="display1" readonly>
+    </div>
+    <div class="twof">
+     <span class="boxss"> Weight:</span> &nbsp;<input type="text" placeholder="weight in kgs" id="weight" class="weight1"><br>
+      <span class="boxss"> height:</span>&nbsp; <input type="text" placeholder="height in cm" id="height" class="weight1">
+    </div>
+    <p></p>
+    <div class="gender">
+    &nbsp;&nbsp; <span class="boxss"> Gender:</span>&nbsp;
+      <input type="radio" name="gender" id="male" value="male" required>
+      <label for="male"><i class="fa-solid fa-person"></i>Male</label>
+
+      <input type="radio" name="gender" id="female" value="female" required>
+      <label for="female"><i class="fa-solid fa-person"></i>Female</label>
+    </div>
+    <p></p>
+    <div class="tarra">
+      
+      <input class="btn btn-outline-primary"  id="submitt"style="margin-left:85px" type="submit"  onclick="cal()" value="Submit">
+      <input class="btn btn-outline-dark" id="resett" style="margin-left:40px" type="reset" value="Reset" onclick="ac()">
+    </div>
+    
+  </section>
+  </div>
+
+  <div class="part-2">
+    <h1  id="gow"  >BMI Calculator</h1>
+   <img src="../css/removebmi1.png" style="width:500px;height:500px;float:right">
+  </div>
+
+  <div class="part-3">
+    
+    <!-- Content for the third part -->
+    
+     <section class="bmi-infographic-box">
+    
+    <div class="bmi-infographic">
+      <h2>BMI Infographic</h2>
+      <div class="bmi-range" data-bmi-range="Underweight (Below 18.5)">
+        <span>Underweight (Below 18.5):</span>
+        <div class="bar blue"></div>
+      </div>
+      <div class="bmi-range" data-bmi-range="Normal Weight (18.5 - 24.9)">
+        <span>Normal Weight (18.5 - 24.9):</span>
+        <div class="bar green"></div>
+      </div>
+      <div class="bmi-range" data-bmi-range="Overweight (25 - 29.9)">
+        <span>Overweight (25 - 29.9):</span>
+        <div class="bar yellow"></div>
+      </div>
+      <div class="bmi-range" data-bmi-range="Obese (30 and above)">
+        <span>Obese (30 and above):</span>
+        <div class="bar red"></div>
+      </div>
+    </div>
+     <div id="container">
+  <button class="learn-more" onclick="handleTipsButtonClick()" >
+    <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text" style="padding-top:200px" >Tips</span>
+  </button>
+</div>
+  </div>
+  </section>
+  </div>
+</section>
+
+
+
+
+  <!-- Part 3: About Us Information Section -->
+ <section class="about-us">
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card" style="width:13rem;">
+      <img src="../css/homepage.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card 1 Title</h5>
+        <p class="card-text">Some quick example text for Card 1.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="card" style="width:13rem;">
+      <img src="../css/homepage.jpeg" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Card 2 Title</h5>
+        <p class="card-text">Some quick example text for Card 2.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="card" style="width:13rem;">
+      <img src="../css/homepage.jpeg" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Card 3 Title</h5>
+        <p class="card-text">Some quick example text for Card 3.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    
+    <!-- Card 4 -->
+    <div class="card" style="width:13rem;">
+      <img src="../css/homepage.jpeg" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Card 4 Title</h5>
+        <p class="card-text">Some quick example text for Card 4.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    
+    <!-- Card 5 -->
+    <div class="card" style="width:13rem;">
+      <img src="../css/homepage.jpeg" class="card-img-top" alt="./">
+      <div class="card-body">
+        <h5 class="card-title">Card 5 Title</h5>
+        <p class="card-text">Some quick example text for Card 5.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Part 4: Footer Section -->
+  
+ <footer class="footer">
+      <div class="footer-content">
+            <div class="footer-left">
+                <h3>Contact Us</h3>
+                <p>Email: cse@example.com</p>
+                <p>Phone: 9014933008</p>
+                <p>Address: 123 Main Street, City, Country</p>
+            </div>
+            <div class="footer-center">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Your Website. All Rights Reserved.
+        </div>
+  </footer>
+
+  <!-- Add Font Awesome JavaScript link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Example usage:
+  // Update the bar chart with a default BMI value when the page loads
+  function cal() {
+  var w = document.getElementById("weight").value;
+  var h = document.getElementById("height").value;
+  var meter = h /100;
+  var wh = w / (meter * meter);
+  var weightheight = wh.toPrecision(4);
+  document.getElementById("display").value = weightheight;
+  handleUserInput();
+}
+
+function ac() {
+  document.getElementById("display").value = "";
+  document.getElementById("weight").value = "";
+  document.getElementById("height").value = "";
+  handleUserInput();
+}
+
+const bmiRanges = [
+  { range: "Underweight (Below 18.5)", color: "blue", min: 0, max: 18.5 },
+  { range: "Normal Weight (18.5 - 24.9)", color: "green", min: 18.5, max: 24.9 },
+  { range: "Overweight (25 - 29.9)", color: "yellow", min: 25, max: 29.9 },
+  { range: "Obese (30 and above)", color: "red", min: 30, max: 50 } // Changed max value to 50
+];
+
+function updateBar(bmiValue) {
+  bmiValue = Math.min(bmiValue, 50);
+
+  const container = document.querySelector(".bmi-infographic");
+
+  container.querySelectorAll(".bar").forEach(barElement => {
+    barElement.style.background = "white";
+  });
+
+  const matchedRange = bmiRanges.find(range => bmiValue >= range.min && bmiValue <= range.max);
+
+  if (matchedRange) {
+    const barElement = container.querySelector(`[data-bmi-range="${matchedRange.range}"] .bar`);
+    let percentage = (bmiValue - matchedRange.min) / (matchedRange.max - matchedRange.min) * 100;
+    percentage = Math.min(percentage, 100);
+    barElement.style.setProperty(`--${matchedRange.color}-percentage`, `${percentage}%`);
+    barElement.style.background = `linear-gradient(to right, ${matchedRange.color} ${percentage}%, white ${percentage}%)`;
+  }
+}
+
+function handleUserInput() {
+  const bmiInput = document.getElementById("display").value;
+  const bmiValue = parseFloat(bmiInput);
+
+  if (!isNaN(bmiValue)) {
+    updateBar(bmiValue);
+  }
+  else{
+    updateBar(0);
+    document.getElementById("display").value = " ";
+  }
+}
+
+const inputField = document.getElementById("display");
+inputField.addEventListener("input", handleUserInput);
+
+// Update the bar chart with a default BMI value when the page loads
+cal();
+function handleTipsButtonClick() {
+  const bmiInput = parseFloat(document.getElementById("display").value);
+
+  if (!isNaN(bmiInput)) {
+    let pageUrl = "/register"; // Default URL if BMI category is not matched
+   
+
+    window.location.href = pageUrl; // Redirect to the corresponding BMI category page
+  }
+}
+
+// Add an event listener for the "Tips" button click
+document.addEventListener("DOMContentLoaded", function () {
+  const tipsButton = document.querySelector(".learn-more .button-text");
+  tipsButton.addEventListener("click", handleTipsButtonClick);
+});
+
+   </script>
+
+
+
+
+  
+
+</body>
+</html>
